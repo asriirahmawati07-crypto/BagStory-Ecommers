@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>BagStory - Premium Bags Collection</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h2>BagStory</h2>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#shop" class="nav-link">Shop</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-icons">
+                    <i class="fas fa-search" id="search-icon" title="Search"></i>
+                    <i class="fas fa-user" id="user-icon" title="Account"></i>
+                    <div class="cart-icon" title="Shopping Cart">
+                        <i class="fas fa-shopping-cart" id="cart-icon"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                    <i class="fas fa-bars" id="mobile-menu" title="Menu"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Perfect Bag</h1>
+            <p>Premium quality bags for every occasion. From elegant handbags to sturdy backpacks.</p>
+            <button class="cta-button" onclick="scrollToSection('shop')">Shop Now</button>
+        </div>
+        <div class="hero-image">
+            <div class="hero-bag-placeholder">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="handbags">
+                    <div class="category-icon">
+                        <i class="fas fa-hand-holding"></i>
+                    </div>
+                    <h3>Handbags</h3>
+                    <p>Elegant handbags for every occasion</p>
+                </div>
+                <div class="category-card" data-category="backpacks">
+                    <div class="category-icon">
+                        <i class="fas fa-backpack"></i>
+                    </div>
+                    <h3>Backpacks</h3>
+                    <p>Comfortable and stylish backpacks</p>
+                </div>
+                <div class="category-card" data-category="totes">
+                    <div class="category-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Tote Bags</h3>
+                    <p>Spacious totes for daily use</p>
+                </div>
+                <div class="category-card" data-category="clutches">
+                    <div class="category-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Clutches</h3>
+                    <p>Perfect for evening events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid" id="featured-products">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2 class="section-title">All Products</h2>
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="handbags">Handbags</option>
+                        <option value="backpacks">Backpacks</option>
+                        <option value="totes">Tote Bags</option>
+                        <option value="clutches">Clutches</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Price Range:</label>
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="0-50">Rp 0 - Rp 1,000,000</option>
+                        <option value="50-100">Rp 1,000,000 - Rp 2,000,000</option>
+                        <option value="100-200">Rp 2,000,000 - Rp 3,000,000</option>
+                        <option value="200+">Rp 3,000,000+</option>
+                    </select>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search products...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="product-grid" id="all-products">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About BagStory</h2>
+                    <p>For over a decade, BagStory has been crafting premium quality bags that combine style, functionality, and durability. Our collection features carefully selected materials and expert craftsmanship.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h4>Free Shipping</h4>
+                            <p>Free shipping on orders over $100</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Quality Guarantee</h4>
+                            <p>1-year warranty on all products</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-undo"></i>
+                            <h4>Easy Returns</h4>
+                            <p>30-day return policy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-placeholder">
+                        <i class="fas fa-store"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Fashion Street, Style City, SC 12345</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@bagstory.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BagStory</h3>
+                    <p>Your trusted partner for premium quality bags.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BagStory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="product-image">
+                    <img id="modal-product-image" src="" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="product-details">
+                    <h2 id="modal-product-name"></h2>
+                    <p class="price" id="modal-product-price"></p>
+                    <p class="description" id="modal-product-description"></p>
+                    <div class="product-options">
+                        <div class="color-options">
+                            <label>Color:</label>
+                            <div class="color-swatches">
+                                <span class="color-swatch active" data-color="black" style="background: #000"></span>
+                                <span class="color-swatch" data-color="brown" style="background: #8B4513"></span>
+                                <span class="color-swatch" data-color="red" style="background: #DC143C"></span>
+                            </div>
+                        </div>
+                        <div class="quantity-selector">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQuantity(-1)">-</button>
+                                <input type="number" id="quantity" value="1" min="1" max="10">
+                                <button type="button" class="qty-btn" onclick="changeQuantity(1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn" id="add-to-cart-modal">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <span class="close-cart">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
